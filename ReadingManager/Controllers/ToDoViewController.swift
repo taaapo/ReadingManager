@@ -1,20 +1,14 @@
-//
-//  ViewController.swift
-//  ReadingManager
-//
-//  Created by 恵紙拓玖 on 2023/10/11.
-//
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 
     @IBOutlet weak var tableView: UITableView!
     
-    let books = [["Zero To One", "★★★★★"],
-                 ["平成くん、さようなら", "☆☆★★★"],
-                 ["コード・ブレーカー", "☆★★★★"]]
+    let books = [["Zero To One"],
+                 ["平成くん、さようなら"],
+                 ["コード・ブレーカー"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.register(UINib(nibName: "BookCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
+        tableView.register(UINib(nibName: "ToDoCell", bundle: nil), forCellReuseIdentifier: "ReusableToDoCell")
         
     }
     
@@ -32,10 +26,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! BookCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableToDoCell", for: indexPath) as! ToDoCell
         
         cell.title.text = books[indexPath.row][0]
-        cell.review.text = books[indexPath.row][1]
         
         return cell
     }
@@ -45,4 +38,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
 }
-

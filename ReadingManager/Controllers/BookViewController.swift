@@ -40,6 +40,11 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //Delete Item
+//        context.delete(books[indexPath.row])
+//        books.remove(at: indexPath.row)
+        
         print(books[indexPath.row])
     }
     

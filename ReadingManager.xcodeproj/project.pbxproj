@@ -19,6 +19,7 @@
 		31B9CB622AD823760092677F /* ToDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B9CB602AD823760092677F /* ToDoCell.xib */; };
 		31B9CB642AD824EA0092677F /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9CB632AD824EA0092677F /* ToDoViewController.swift */; };
 		31CD87462AD8F73400F83A96 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31CD87442AD8F73400F83A96 /* DataModel.xcdatamodeld */; };
+		31CD876B2ADAFF2400F83A96 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD876A2ADAFF2400F83A96 /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		31B9CB602AD823760092677F /* ToDoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoCell.xib; sourceTree = "<group>"; };
 		31B9CB632AD824EA0092677F /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		31CD87452AD8F73400F83A96 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		31CD876A2ADAFF2400F83A96 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				31B9CB462AD6A9270092677F /* BookViewController.swift */,
 				31B9CB632AD824EA0092677F /* ToDoViewController.swift */,
+				31CD876A2ADAFF2400F83A96 /* ContentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31CD876B2ADAFF2400F83A96 /* ContentViewController.swift in Sources */,
 				31B9CB5D2AD6D7500092677F /* BookCell.swift in Sources */,
 				31B9CB472AD6A9270092677F /* BookViewController.swift in Sources */,
 				31B9CB432AD6A9270092677F /* AppDelegate.swift in Sources */,

@@ -74,8 +74,8 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
             textField = alertTextField
         }
         
-        alert.addAction(action1)
         alert.addAction(action2)
+        alert.addAction(action1)
         
         present(alert, animated: true, completion: nil)
         

@@ -18,8 +18,10 @@
 		31B9CB612AD823760092677F /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9CB5F2AD823760092677F /* ToDoCell.swift */; };
 		31B9CB622AD823760092677F /* ToDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B9CB602AD823760092677F /* ToDoCell.xib */; };
 		31B9CB642AD824EA0092677F /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9CB632AD824EA0092677F /* ToDoViewController.swift */; };
-		31CD87462AD8F73400F83A96 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31CD87442AD8F73400F83A96 /* DataModel.xcdatamodeld */; };
 		31CD876B2ADAFF2400F83A96 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD876A2ADAFF2400F83A96 /* ContentViewController.swift */; };
+		31CD876F2ADC444900F83A96 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD876E2ADC444900F83A96 /* Books.swift */; };
+		31CD87712ADC445200F83A96 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD87702ADC445200F83A96 /* Content.swift */; };
+		47809D01DBC620319E4D267E /* Pods_ReadingManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B65D8375A5206841FE820C /* Pods_ReadingManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +38,12 @@
 		31B9CB5F2AD823760092677F /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		31B9CB602AD823760092677F /* ToDoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoCell.xib; sourceTree = "<group>"; };
 		31B9CB632AD824EA0092677F /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
-		31CD87452AD8F73400F83A96 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		31CD876A2ADAFF2400F83A96 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		31CD876E2ADC444900F83A96 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		31CD87702ADC445200F83A96 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		B55A6B428594790B29B8C3A6 /* Pods-ReadingManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingManager.debug.xcconfig"; path = "Target Support Files/Pods-ReadingManager/Pods-ReadingManager.debug.xcconfig"; sourceTree = "<group>"; };
+		BC80B04B67C018418AE92DE6 /* Pods-ReadingManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingManager.release.xcconfig"; path = "Target Support Files/Pods-ReadingManager/Pods-ReadingManager.release.xcconfig"; sourceTree = "<group>"; };
+		D3B65D8375A5206841FE820C /* Pods_ReadingManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadingManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47809D01DBC620319E4D267E /* Pods_ReadingManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A2280C106DDC4201A092742 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3B65D8375A5206841FE820C /* Pods_ReadingManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D307BE977C1133B3F15FDFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B55A6B428594790B29B8C3A6 /* Pods-ReadingManager.debug.xcconfig */,
+				BC80B04B67C018418AE92DE6 /* Pods-ReadingManager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		31B9CB362AD6A9270092677F = {
 			isa = PBXGroup;
 			children = (
 				31B9CB412AD6A9270092677F /* ReadingManager */,
 				31B9CB402AD6A9270092677F /* Products */,
+				2D307BE977C1133B3F15FDFF /* Pods */,
+				0A2280C106DDC4201A092742 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,7 +98,7 @@
 			children = (
 				31B9CB422AD6A9270092677F /* AppDelegate.swift */,
 				31B9CB442AD6A9270092677F /* SceneDelegate.swift */,
-				31B9CB582AD6D6260092677F /* Models */,
+				31B9CB582AD6D6260092677F /* DataModels */,
 				31B9CB572AD6D60B0092677F /* Controllers */,
 				31B9CB562AD6D5F60092677F /* Views */,
 				31B9CB4B2AD6A9280092677F /* Assets.xcassets */,
@@ -104,12 +130,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		31B9CB582AD6D6260092677F /* Models */ = {
+		31B9CB582AD6D6260092677F /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				31CD87442AD8F73400F83A96 /* DataModel.xcdatamodeld */,
+				31CD876E2ADC444900F83A96 /* Books.swift */,
+				31CD87702ADC445200F83A96 /* Content.swift */,
 			);
-			path = Models;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31B9CB532AD6A9280092677F /* Build configuration list for PBXNativeTarget "ReadingManager" */;
 			buildPhases = (
+				B184F3B0F22EBF18CB2F4487 /* [CP] Check Pods Manifest.lock */,
 				31B9CB3B2AD6A9270092677F /* Sources */,
 				31B9CB3C2AD6A9270092677F /* Frameworks */,
 				31B9CB3D2AD6A9270092677F /* Resources */,
+				561AEB188F5854D18DCB1A9E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +209,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		561AEB188F5854D18DCB1A9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReadingManager/Pods-ReadingManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReadingManager/Pods-ReadingManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReadingManager/Pods-ReadingManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B184F3B0F22EBF18CB2F4487 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReadingManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		31B9CB3B2AD6A9270092677F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -188,9 +259,10 @@
 				31CD876B2ADAFF2400F83A96 /* ContentViewController.swift in Sources */,
 				31B9CB5D2AD6D7500092677F /* BookCell.swift in Sources */,
 				31B9CB472AD6A9270092677F /* BookViewController.swift in Sources */,
+				31CD87712ADC445200F83A96 /* Content.swift in Sources */,
 				31B9CB432AD6A9270092677F /* AppDelegate.swift in Sources */,
-				31CD87462AD8F73400F83A96 /* DataModel.xcdatamodeld in Sources */,
 				31B9CB452AD6A9270092677F /* SceneDelegate.swift in Sources */,
+				31CD876F2ADC444900F83A96 /* Books.swift in Sources */,
 				31B9CB642AD824EA0092677F /* ToDoViewController.swift in Sources */,
 				31B9CB612AD823760092677F /* ToDoCell.swift in Sources */,
 			);
@@ -336,6 +408,7 @@
 		};
 		31B9CB542AD6A9280092677F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B55A6B428594790B29B8C3A6 /* Pods-ReadingManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -364,6 +437,7 @@
 		};
 		31B9CB552AD6A9280092677F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC80B04B67C018418AE92DE6 /* Pods-ReadingManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -412,19 +486,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		31CD87442AD8F73400F83A96 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				31CD87452AD8F73400F83A96 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = 31CD87452AD8F73400F83A96 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 31B9CB372AD6A9270092677F /* Project object */;
 }

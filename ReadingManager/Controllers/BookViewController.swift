@@ -22,6 +22,8 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    //MARK: - TableView Datasource Methods
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return book?.count ?? 1
     }
@@ -38,9 +40,10 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    //MARK: - TableView Delegate Methods
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToContent", sender: self)
-        print(book?[indexPath.row].title)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,6 +53,49 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    //MARK: - TableView Swipable
+//
+//    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        return false
+//    }
+//
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if (editingStyle == UITableViewCell.EditingStyle.delete) {
+//            // handle delete (by removing the data from your array and updating the tableview)
+//            if let bookForDeletion = book?[indexPath.row] {
+//                do {
+//                    try self.realm.write({
+//                        self.realm.delete(bookForDeletion)
+//                    })
+//                } catch {
+//                    print("Error deleting book, \(error)")
+//                }
+//            }
+//        }
+//        loadBook()
+//    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let action = UIContextualAction(style: .destructive, title: "削除") { (action, view, completionHandler) in
+            
+            if let bookForDeletion = self.book?[indexPath.row] {
+                do {
+                    try self.realm.write({
+                        self.realm.delete(bookForDeletion)
+                    })
+                } catch {
+                    print("Error deleting book, \(error)")
+                }
+            }
+            self.loadBook()
+            print(#function)
+            completionHandler(true)
+        }
+
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+        
     //MARK: - Add New book
     
     @IBAction func addButtonPressed(_ sender: UIButton) {

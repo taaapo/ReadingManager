@@ -1,20 +1,19 @@
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class BookViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
 
     @IBOutlet weak var tableView: UITableView!
     
-    var books = [Books]()
+    let realm = try! Realm()
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var book: Results<Book>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadBooks()
+        loadBook()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -24,45 +23,50 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
+        return book?.count ?? 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableBookCell", for: indexPath) as! BookCell
         
-        let book = books[indexPath.row]
+        let book = book?[indexPath.row]
         
-        cell.title.text = book.title
-        cell.review.text = book.review
+        cell.title.text = book?.title ?? "本が追加されていません"
+        cell.review.text = book?.review ?? ""
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //Delete Item
-//        context.delete(books[indexPath.row])
-//        books.remove(at: indexPath.row)
-        
-        print(books[indexPath.row])
+        performSegue(withIdentifier: "goToContent", sender: self)
+        print(book?[indexPath.row].title)
     }
     
-    //MARK: - Add New Books
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ContentViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedBook = book?[indexPath.row]
+        }
+    }
+    
+    //MARK: - Add New book
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
         var textField = UITextField()
         
-        let alert = UIAlertController(title: "本の名前を入力してください", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "本のタイトルを入力してください", message: "", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "追加", style: .default) { (action) in
             
-            let newBook = Books(context: self.context)
-            newBook.title = textField.text
+            let newBook = Book()
+            newBook.title = textField.text ?? ""
             newBook.review = "☆☆☆☆☆"
-            self.books.append(newBook)
-            self.saveBooks()
+            newBook.category = ""
+            newBook.overview = ""
+            newBook.impression = ""
+            self.save(book: newBook)
     
         }
         
@@ -70,7 +74,7 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "新しい本"
+            alertTextField.placeholder = "タイトル"
             textField = alertTextField
         }
         
@@ -83,10 +87,12 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: - Data Manipulation Methods
     
-    func saveBooks(){
+    func save(book: Book){
         
         do {
-            try context.save()
+            try realm.write{
+                realm.add(book)
+            }
         } catch {
             print("Error saving conetxt \(error)")
         }
@@ -94,14 +100,10 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
-    func loadBooks(with request: NSFetchRequest<Books> = Books.fetchRequest(), predicate: NSPredicate? = nil){
-
-        do {
-            books = try context.fetch(request)
-        } catch {
-            print("Error fetching category from context \(error)")
-        }
+    func loadBook(){
         
+        book = realm.objects(Book.self)
+
         tableView.reloadData()
     }
     

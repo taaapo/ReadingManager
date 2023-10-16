@@ -71,8 +71,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="読んだ本" id="XeY-0J-1JX">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="FSr-Ua-aUF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="GgC-VO-1Gp">
-                                <rect key="frame" x="184" y="432" width="45" height="31"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="GgC-VO-1Gp">
+                                <rect key="frame" x="344" y="5" width="50" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -210,7 +210,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r6j-12-UIZ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="ePG-kq-Phc">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="ePG-kq-Phc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BlA-v6-aqF">
                                 <rect key="frame" x="319" y="5" width="75" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -234,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECL-mU-p4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2272" y="-896"/>
+            <point key="canvasLocation" x="2278" y="-876"/>
         </scene>
         <!--読んだ本-->
         <scene sceneID="o78-dc-wpj">

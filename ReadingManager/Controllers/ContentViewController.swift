@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ContentViewController: UIViewController {
     
@@ -16,12 +17,14 @@ class ContentViewController: UIViewController {
     @IBOutlet var bookImpression: UITextView!
     @IBOutlet var editButton: UIButton!
     
+    let realm = try! Realm()
+    var selectedBook: Book?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadContent(book: selectedBook)
         viewMode()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func editButtonPressed(_ sender: UIButton) {
@@ -31,6 +34,20 @@ class ContentViewController: UIViewController {
             editMode()
             
         } else if sender.currentTitle == "保存" {
+            
+            if let book = selectedBook {
+                do {
+                    try realm.write({
+                        book.title = self.bookTitle.text
+                        book.category = self.bookCategory.text
+                        book.review = self.bookReview.text
+                        book.overview = self.bookOverview.text
+                        book.impression = self.bookImpression.text
+                    })
+                } catch {
+                    print("Error saving content, \(error)")
+                }
+            }
             
             viewMode()
             
@@ -60,5 +77,18 @@ class ContentViewController: UIViewController {
         editButton.setTitle("編集", for: .normal)
         
     }
+    
+    func loadContent(book: Book?){
+        
+        print(book?.title)
+        
+        self.bookTitle.text = book?.title
+        self.bookCategory.text = book?.category
+        self.bookReview.text = book?.review
+        self.bookOverview.text = book?.overview
+        self.bookImpression.text = book?.impression
+
+    }
+
 
 }

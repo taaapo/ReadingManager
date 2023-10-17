@@ -43,7 +43,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="読みたい本" id="BR4-Pt-CxG"/>
+                    <navigationItem key="navigationItem" title="読みたい本" id="BR4-Pt-CxG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="kWq-cU-S5q">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="LJ7-oz-NbA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="0Yr-st-NBd" id="kUm-uP-mXz"/>
                     </connections>
@@ -126,14 +132,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="概要" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfA-Rj-ETK">
-                                                <rect key="frame" x="22" y="317" width="35" height="21"/>
+                                                <rect key="frame" x="22" y="483" width="35" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="感想" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xo-gz-SqE">
-                                                <rect key="frame" x="22" y="484" width="35" height="21"/>
+                                                <rect key="frame" x="22" y="650" width="35" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -156,7 +162,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xdq-qa-wPP">
-                                                <rect key="frame" x="22" y="346" width="360" height="133"/>
+                                                <rect key="frame" x="22" y="512" width="360" height="133"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要概要</string>
@@ -165,7 +171,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dxE-MU-04T">
-                                                <rect key="frame" x="22" y="513" width="360" height="133"/>
+                                                <rect key="frame" x="22" y="679" width="360" height="133"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想感想</string>
@@ -175,6 +181,25 @@
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="★★★★★" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uqM-vS-xpU">
                                                 <rect key="frame" x="22" y="257" width="360" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="読んだ日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te5-w6-jhz">
+                                                <rect key="frame" x="22" y="313" width="87" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ID5-4S-nTY">
+                                                <rect key="frame" x="22" y="342" width="360" height="59"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            </datePicker>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="日付" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bkq-TI-cwP">
+                                                <rect key="frame" x="22" y="347" width="360" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -225,6 +250,8 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="bookCategory" destination="aS6-fx-9p8" id="Sgx-MT-uZA"/>
+                        <outlet property="bookDate" destination="ID5-4S-nTY" id="zbV-Ix-FI9"/>
+                        <outlet property="bookDateView" destination="Bkq-TI-cwP" id="4zB-SV-45a"/>
                         <outlet property="bookImpression" destination="dxE-MU-04T" id="MpA-lT-yKD"/>
                         <outlet property="bookOverview" destination="xdq-qa-wPP" id="snW-bH-oJC"/>
                         <outlet property="bookReview" destination="uqM-vS-xpU" id="JIf-Gf-0yq"/>
@@ -234,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECL-mU-p4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2278" y="-876"/>
+            <point key="canvasLocation" x="2275.36231884058" y="-876.5625"/>
         </scene>
         <!--読んだ本-->
         <scene sceneID="o78-dc-wpj">

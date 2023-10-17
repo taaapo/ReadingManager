@@ -13,8 +13,11 @@ class ContentViewController: UIViewController {
     @IBOutlet var bookTitle: UITextView!
     @IBOutlet var bookCategory: UITextView!
     @IBOutlet var bookReview: UITextView!
+    @IBOutlet var bookDate: UIDatePicker!
+    @IBOutlet var bookDateView: UITextView!
     @IBOutlet var bookOverview: UITextView!
     @IBOutlet var bookImpression: UITextView!
+    
     @IBOutlet var editButton: UIButton!
     
     let realm = try! Realm()
@@ -26,6 +29,8 @@ class ContentViewController: UIViewController {
         loadContent(book: selectedBook)
         viewMode()
     }
+    
+    //MARK: - edit and save
     
     @IBAction func editButtonPressed(_ sender: UIButton) {
         
@@ -41,6 +46,8 @@ class ContentViewController: UIViewController {
                         book.title = self.bookTitle.text
                         book.category = self.bookCategory.text
                         book.review = self.bookReview.text
+                        book.date = self.bookDate.date
+                        book.dateView = self.bookDateView.text
                         book.overview = self.bookOverview.text
                         book.impression = self.bookImpression.text
                     })
@@ -61,6 +68,8 @@ class ContentViewController: UIViewController {
         self.bookTitle.isEditable = true
         self.bookCategory.isEditable = true
         self.bookReview.isEditable = true
+        self.bookDate.isHidden = false
+        self.bookDateView.isHidden = true
         self.bookOverview.isEditable = true
         self.bookImpression.isEditable = true
         editButton.setTitle("保存", for: .normal)
@@ -72,19 +81,30 @@ class ContentViewController: UIViewController {
         self.bookTitle.isEditable = false
         self.bookCategory.isEditable = false
         self.bookReview.isEditable = false
+        self.bookDate.isHidden = true
+        self.bookDateView.isHidden = false
+        self.bookDateView.isEditable = false
+        
+        //bookDateViewに日付を入力
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "YYYY年 M月 d日"
+        self.bookDateView.text = dateformatter.string(from: (self.selectedBook?.date)!)
+        
         self.bookOverview.isEditable = false
         self.bookImpression.isEditable = false
         editButton.setTitle("編集", for: .normal)
         
     }
     
+    //MARK: - Data Manipulation Methods
+    
     func loadContent(book: Book?){
-        
-        print(book?.title)
         
         self.bookTitle.text = book?.title
         self.bookCategory.text = book?.category
         self.bookReview.text = book?.review
+        self.bookDate.date = (book?.date)!
+        self.bookDateView.text = book?.dateView
         self.bookOverview.text = book?.overview
         self.bookImpression.text = book?.impression
 

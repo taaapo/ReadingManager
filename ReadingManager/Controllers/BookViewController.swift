@@ -12,6 +12,7 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadBook), name: NSNotification.Name(rawValue: "load"), object: nil)
         
         loadBook()
         
@@ -54,26 +55,6 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     //MARK: - TableView Swipable
-//
-//    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return false
-//    }
-//
-//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if (editingStyle == UITableViewCell.EditingStyle.delete) {
-//            // handle delete (by removing the data from your array and updating the tableview)
-//            if let bookForDeletion = book?[indexPath.row] {
-//                do {
-//                    try self.realm.write({
-//                        self.realm.delete(bookForDeletion)
-//                    })
-//                } catch {
-//                    print("Error deleting book, \(error)")
-//                }
-//            }
-//        }
-//        loadBook()
-//    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
@@ -109,6 +90,8 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let newBook = Book()
             newBook.title = textField.text ?? ""
             newBook.review = "☆☆☆☆☆"
+            newBook.date = Date()
+            newBook.dateView = ""
             newBook.category = ""
             newBook.overview = ""
             newBook.impression = ""
@@ -146,7 +129,7 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
-    func loadBook(){
+    @objc func loadBook(){
         
         book = realm.objects(Book.self)
 

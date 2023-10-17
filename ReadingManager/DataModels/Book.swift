@@ -12,6 +12,8 @@ class Book : Object {
     @objc dynamic var title : String! = ""
     @objc dynamic var category : String! = ""
     @objc dynamic var review : String! = "★★★★★"
+    @objc dynamic var date : Date! = Date()
+    @objc dynamic var dateView : String! = ""
     @objc dynamic var overview : String! = ""
     @objc dynamic var impression : String! = ""
     

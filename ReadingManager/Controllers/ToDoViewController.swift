@@ -37,8 +37,8 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        var textField = UITextField()
+
+//        var textField = UITextField()
         
         let alert = UIAlertController(title: "「読んだ本」に追加しますか？", message: "", preferredStyle: .alert)
         
@@ -106,6 +106,11 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return UISwipeActionsConfiguration(actions: [action])
     }
         
+    //MARK: - Specify cell heightr
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 50
+        }
     
     //MARK: - Add New ToDo
     

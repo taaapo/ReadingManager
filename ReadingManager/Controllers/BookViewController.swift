@@ -73,16 +73,22 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
             self.loadBook()
-            print(#function)
             completionHandler(true)
         }
 
         return UISwipeActionsConfiguration(actions: [action])
     }
+    
+    //MARK: - Specify cell heightr
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 50
+        }
+
         
     //MARK: - Add New book
     
-    @IBAction func addButtonPressed(_ sender: UIButton) {
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
         
@@ -98,6 +104,7 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
             newBook.category = ""
             newBook.overview = ""
             newBook.impression = ""
+            newBook.comment = ""
             self.save(book: newBook)
     
         }

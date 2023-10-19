@@ -16,6 +16,7 @@ class Book : Object {
     @objc dynamic var dateView : String! = ""
     @objc dynamic var overview : String! = ""
     @objc dynamic var impression : String! = ""
+    @objc dynamic var comment : String! = ""
     
 }
 

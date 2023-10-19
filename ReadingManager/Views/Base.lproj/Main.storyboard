@@ -76,15 +76,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="読んだ本" id="XeY-0J-1JX">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="FSr-Ua-aUF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="GgC-VO-1Gp">
-                                <rect key="frame" x="344" y="5" width="50" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <action selector="addButtonPressed:" destination="iD0-gs-Iku" eventType="touchUpInside" id="kEc-FL-tjg"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="FSr-Ua-aUF">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="iD0-gs-Iku" id="tH7-zl-P1J"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -197,40 +192,45 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TQE-Nv-rcS">
                                                                 <rect key="frame" x="5" y="0.0" width="124" height="35"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXU-I6-DHt" userLabel="1">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXU-I6-DHt" userLabel="1">
                                                                         <rect key="frame" x="0.0" y="0.0" width="23" height="35"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="1"/>
                                                                         <connections>
                                                                             <action selector="reviewButtonPressed:" destination="aVh-nd-Luu" eventType="touchUpInside" id="eTs-yC-2S0"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnk-AR-IBE" userLabel="2">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnk-AR-IBE" userLabel="2">
                                                                         <rect key="frame" x="25" y="0.0" width="23.5" height="35"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="2"/>
                                                                         <connections>
                                                                             <action selector="reviewButtonPressed:" destination="aVh-nd-Luu" eventType="touchUpInside" id="6e1-XN-rxu"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q85-04-rx9" userLabel="3">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q85-04-rx9" userLabel="3">
                                                                         <rect key="frame" x="50.5" y="0.0" width="23" height="35"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="3"/>
                                                                         <connections>
                                                                             <action selector="reviewButtonPressed:" destination="aVh-nd-Luu" eventType="touchUpInside" id="S3T-hM-T1i"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sj-Tk-hSD" userLabel="4">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sj-Tk-hSD" userLabel="4">
                                                                         <rect key="frame" x="75.5" y="0.0" width="23.5" height="35"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="4"/>
                                                                         <connections>
                                                                             <action selector="reviewButtonPressed:" destination="aVh-nd-Luu" eventType="touchUpInside" id="Xmx-jX-A6Z"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2K-zx-vdK" userLabel="5">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2K-zx-vdK" userLabel="5">
                                                                         <rect key="frame" x="101" y="0.0" width="23" height="35"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="5"/>
                                                                         <connections>
@@ -491,6 +491,7 @@
                     <connections>
                         <outlet property="background" destination="AKT-XD-9OU" id="y7L-Ob-hAQ"/>
                         <outlet property="bookCategory" destination="aS6-fx-9p8" id="Sgx-MT-uZA"/>
+                        <outlet property="bookComment" destination="WQE-cB-ga3" id="0ql-dJ-vww"/>
                         <outlet property="bookDate" destination="ID5-4S-nTY" id="zbV-Ix-FI9"/>
                         <outlet property="bookDateView" destination="Bkq-TI-cwP" id="4zB-SV-45a"/>
                         <outlet property="bookImpression" destination="dxE-MU-04T" id="MpA-lT-yKD"/>
@@ -509,7 +510,7 @@
         <scene sceneID="o78-dc-wpj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UNX-dH-npP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="読んだ本" id="GEW-ur-ZS9"/>
+                    <tabBarItem key="tabBarItem" title="読んだ本" image="book.fill" catalog="system" id="GEW-ur-ZS9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s6P-3t-sdL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -528,7 +529,7 @@
         <scene sceneID="Cpx-2R-ic6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="naV-zf-39t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="読みたい本" id="lPU-tI-WSo"/>
+                    <tabBarItem key="tabBarItem" title="読みたい本" image="book" catalog="system" id="lPU-tI-WSo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="F6H-GO-vHk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -545,6 +546,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

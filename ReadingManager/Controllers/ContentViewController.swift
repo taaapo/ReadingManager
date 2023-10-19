@@ -19,6 +19,7 @@ class ContentViewController: UIViewController {
     @IBOutlet var bookDateView: UITextView!
     @IBOutlet var bookOverview: UITextView!
     @IBOutlet var bookImpression: UITextView!
+    @IBOutlet var bookComment: UITextView!
     
     @IBOutlet var editButton: UIButton!
     
@@ -56,6 +57,7 @@ class ContentViewController: UIViewController {
                         book.dateView = self.bookDateView.text
                         book.overview = self.bookOverview.text
                         book.impression = self.bookImpression.text
+                        book.comment = self.bookComment.text
                     })
                 } catch {
                     print("Error saving content, \(error)")
@@ -101,6 +103,7 @@ class ContentViewController: UIViewController {
         self.bookDateView.isHidden = true
         self.bookOverview.isEditable = true
         self.bookImpression.isEditable = true
+        self.bookComment.isEditable = true
         editButton.setTitle("保存", for: .normal)
         
         editColor()
@@ -123,6 +126,7 @@ class ContentViewController: UIViewController {
         
         self.bookOverview.isEditable = false
         self.bookImpression.isEditable = false
+        self.bookComment.isEditable = true
         editButton.setTitle("編集", for: .normal)
         
         viewColor()
@@ -138,11 +142,13 @@ class ContentViewController: UIViewController {
         self.bookDateView.backgroundColor = UIColor.white
         self.bookOverview.backgroundColor = UIColor.white
         self.bookImpression.backgroundColor = UIColor.white
+        self.bookComment.backgroundColor = UIColor.white
         
         self.bookTitle.layer.borderWidth = 0.0
         self.bookCategory.layer.borderWidth = 0.0
         self.bookOverview.layer.borderWidth = 0.0
         self.bookImpression.layer.borderWidth = 0.0
+        self.bookComment.layer.borderWidth = 0.0
         
         self.bookTitle.textColor = UIColor.black
         self.bookCategory.textColor = UIColor.black
@@ -150,6 +156,7 @@ class ContentViewController: UIViewController {
         self.bookDateView.textColor = UIColor.black
         self.bookOverview.textColor = UIColor.black
         self.bookImpression.textColor = UIColor.black
+        self.bookComment.textColor = UIColor.black
         
     }
     
@@ -161,11 +168,13 @@ class ContentViewController: UIViewController {
         self.bookCategory.layer.borderColor = UIColor.systemBlue.cgColor
         self.bookOverview.layer.borderColor = UIColor.systemBlue.cgColor
         self.bookImpression.layer.borderColor = UIColor.systemBlue.cgColor
+        self.bookComment.layer.borderColor = UIColor.systemBlue.cgColor
         
         self.bookTitle.layer.borderWidth = 1.0
         self.bookCategory.layer.borderWidth = 1.0
         self.bookOverview.layer.borderWidth = 1.0
         self.bookImpression.layer.borderWidth = 1.0
+        self.bookComment.layer.borderWidth = 1.0
         
         self.bookTitle.layer.cornerRadius = 5.0
         self.bookTitle.layer.masksToBounds = true
@@ -175,12 +184,15 @@ class ContentViewController: UIViewController {
         self.bookOverview.layer.masksToBounds = true
         self.bookImpression.layer.cornerRadius = 5.0
         self.bookImpression.layer.masksToBounds = true
+        self.bookComment.layer.cornerRadius = 5.0
+        self.bookComment.layer.masksToBounds = true
         
         self.bookTitle.textColor = UIColor.systemBlue
         self.bookCategory.textColor = UIColor.systemBlue
         self.bookReview.textColor = UIColor.systemBlue
         self.bookOverview.textColor = UIColor.systemBlue
         self.bookImpression.textColor = UIColor.systemBlue
+        self.bookComment.textColor = UIColor.systemBlue
         
     }
     
@@ -195,6 +207,7 @@ class ContentViewController: UIViewController {
         self.bookDateView.text = book?.dateView
         self.bookOverview.text = book?.overview
         self.bookImpression.text = book?.impression
+        self.bookComment.text = book?.comment
 
     }
 

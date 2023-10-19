@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3132B3122ADE5D750078F19C /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132B3112ADE5D750078F19C /* ToDo.swift */; };
-		3132B3142ADF93500078F19C /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132B3132ADF93500078F19C /* ColorPalette.swift */; };
 		31B9CB432AD6A9270092677F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9CB422AD6A9270092677F /* AppDelegate.swift */; };
 		31B9CB452AD6A9270092677F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9CB442AD6A9270092677F /* SceneDelegate.swift */; };
 		31B9CB472AD6A9270092677F /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9CB462AD6A9270092677F /* BookViewController.swift */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		3132B3112ADE5D750078F19C /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
-		3132B3132ADF93500078F19C /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		31B9CB3F2AD6A9270092677F /* ReadingManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31B9CB422AD6A9270092677F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31B9CB442AD6A9270092677F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 			children = (
 				31CD87722ADCF9E500F83A96 /* Book.swift */,
 				3132B3112ADE5D750078F19C /* ToDo.swift */,
-				3132B3132ADF93500078F19C /* ColorPalette.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -264,7 +261,6 @@
 				31B9CB5D2AD6D7500092677F /* BookCell.swift in Sources */,
 				31B9CB472AD6A9270092677F /* BookViewController.swift in Sources */,
 				31B9CB432AD6A9270092677F /* AppDelegate.swift in Sources */,
-				3132B3142ADF93500078F19C /* ColorPalette.swift in Sources */,
 				31B9CB452AD6A9270092677F /* SceneDelegate.swift in Sources */,
 				31B9CB642AD824EA0092677F /* ToDoViewController.swift in Sources */,
 				31CD87732ADCF9E500F83A96 /* Book.swift in Sources */,

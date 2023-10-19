@@ -12,6 +12,9 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        
         NotificationCenter.default.addObserver(self, selector: #selector(loadBook), name: NSNotification.Name(rawValue: "load"), object: nil)
         
         loadBook()
@@ -89,7 +92,7 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let newBook = Book()
             newBook.title = textField.text ?? ""
-            newBook.review = "☆☆☆☆☆"
+            newBook.review = "★★★☆☆"
             newBook.date = Date()
             newBook.dateView = ""
             newBook.category = ""

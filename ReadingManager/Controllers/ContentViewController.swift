@@ -20,6 +20,9 @@ class ContentViewController: UIViewController {
     
     @IBOutlet var editButton: UIButton!
     
+    @IBOutlet var background: UIView!
+    
+    
     let realm = try! Realm()
     var selectedBook: Book?
     
@@ -63,6 +66,29 @@ class ContentViewController: UIViewController {
         }
     }
     
+    //MARK: - Review Function
+    
+    @IBAction func reviewButtonPressed(_ sender: UIButton) {
+        if editButton.titleLabel?.text == "保存" {
+            switch sender.titleLabel?.text {
+            case "1":
+                self.bookReview.text = "★☆☆☆☆"
+            case "2":
+                self.bookReview.text = "★★☆☆☆"
+            case "3":
+                self.bookReview.text = "★★★☆☆"
+            case "4":
+                self.bookReview.text = "★★★★☆"
+            case "5":
+                self.bookReview.text = "★★★★★"
+            default:
+                self.bookReview.text = "★★★★★"
+        }
+        }
+    }
+    
+    //MARK: - EditMode and ViewMode
+    
     func editMode() {
         
         self.bookTitle.isEditable = true
@@ -93,6 +119,27 @@ class ContentViewController: UIViewController {
         self.bookOverview.isEditable = false
         self.bookImpression.isEditable = false
         editButton.setTitle("編集", for: .normal)
+        
+        viewColor()
+        
+    }
+    
+    func viewColor() {
+        
+        self.background.backgroundColor = UIColor.white
+        self.bookTitle.backgroundColor = UIColor.white
+        self.bookCategory.backgroundColor = UIColor.white
+        self.bookReview.backgroundColor = UIColor.white
+        self.bookDateView.backgroundColor = UIColor.white
+        self.bookOverview.backgroundColor = UIColor.white
+        self.bookImpression.backgroundColor = UIColor.white
+        
+        self.bookTitle.textColor = UIColor.black
+        self.bookCategory.textColor = UIColor.black
+        self.bookReview.textColor = UIColor.black
+        self.bookDateView.textColor = UIColor.black
+        self.bookOverview.textColor = UIColor.black
+        self.bookImpression.textColor = UIColor.black
         
     }
     

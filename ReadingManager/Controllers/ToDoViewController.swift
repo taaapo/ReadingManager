@@ -46,7 +46,7 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let newBook = Book()
             newBook.title = self.toDo?[indexPath.row].title ?? ""
-            newBook.review = "☆☆☆☆☆"
+            newBook.review = "★★★☆☆"
             newBook.category = ""
             newBook.overview = ""
             newBook.impression = ""

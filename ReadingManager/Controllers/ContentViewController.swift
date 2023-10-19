@@ -7,12 +7,14 @@
 
 import UIKit
 import RealmSwift
+import SwiftUI
 
 class ContentViewController: UIViewController {
     
     @IBOutlet var bookTitle: UITextView!
     @IBOutlet var bookCategory: UITextView!
     @IBOutlet var bookReview: UITextView!
+    @IBOutlet var bookRevienButton: UIButton!
     @IBOutlet var bookDate: UIDatePicker!
     @IBOutlet var bookDateView: UITextView!
     @IBOutlet var bookOverview: UITextView!
@@ -30,6 +32,7 @@ class ContentViewController: UIViewController {
         super.viewDidLoad()
         
         loadContent(book: selectedBook)
+        
         viewMode()
     }
     
@@ -100,6 +103,8 @@ class ContentViewController: UIViewController {
         self.bookImpression.isEditable = true
         editButton.setTitle("保存", for: .normal)
         
+        editColor()
+        
     }
     
     func viewMode() {
@@ -134,12 +139,48 @@ class ContentViewController: UIViewController {
         self.bookOverview.backgroundColor = UIColor.white
         self.bookImpression.backgroundColor = UIColor.white
         
+        self.bookTitle.layer.borderWidth = 0.0
+        self.bookCategory.layer.borderWidth = 0.0
+        self.bookOverview.layer.borderWidth = 0.0
+        self.bookImpression.layer.borderWidth = 0.0
+        
         self.bookTitle.textColor = UIColor.black
         self.bookCategory.textColor = UIColor.black
         self.bookReview.textColor = UIColor.black
         self.bookDateView.textColor = UIColor.black
         self.bookOverview.textColor = UIColor.black
         self.bookImpression.textColor = UIColor.black
+        
+    }
+    
+    func editColor() {
+        
+        self.background.backgroundColor = UIColor.white
+        
+        self.bookTitle.layer.borderColor = UIColor.systemBlue.cgColor
+        self.bookCategory.layer.borderColor = UIColor.systemBlue.cgColor
+        self.bookOverview.layer.borderColor = UIColor.systemBlue.cgColor
+        self.bookImpression.layer.borderColor = UIColor.systemBlue.cgColor
+        
+        self.bookTitle.layer.borderWidth = 1.0
+        self.bookCategory.layer.borderWidth = 1.0
+        self.bookOverview.layer.borderWidth = 1.0
+        self.bookImpression.layer.borderWidth = 1.0
+        
+        self.bookTitle.layer.cornerRadius = 5.0
+        self.bookTitle.layer.masksToBounds = true
+        self.bookCategory.layer.cornerRadius = 5.0
+        self.bookCategory.layer.masksToBounds = true
+        self.bookOverview.layer.cornerRadius = 5.0
+        self.bookOverview.layer.masksToBounds = true
+        self.bookImpression.layer.cornerRadius = 5.0
+        self.bookImpression.layer.masksToBounds = true
+        
+        self.bookTitle.textColor = UIColor.systemBlue
+        self.bookCategory.textColor = UIColor.systemBlue
+        self.bookReview.textColor = UIColor.systemBlue
+        self.bookOverview.textColor = UIColor.systemBlue
+        self.bookImpression.textColor = UIColor.systemBlue
         
     }
     

@@ -2,7 +2,7 @@
 import UIKit
 import RealmSwift
 
-class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -163,6 +163,22 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         toDo = realm.objects(ToDo.self)
 
         tableView.reloadData()
+    }
+    
+    //MARK: - Search Function
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        toDo = toDo?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "title", ascending: true)
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadToDo()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
     }
     
 }

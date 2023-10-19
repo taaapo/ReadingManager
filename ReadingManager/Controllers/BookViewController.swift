@@ -2,7 +2,7 @@
 import UIKit
 import RealmSwift
 
-class BookViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BookViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -146,6 +146,21 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
+    //MARK: - Search Function
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        book = book?.filter("(title CONTAINS[cd] %@) || (category CONTAINS[cd] %@)", searchBar.text!, searchBar.text!).sorted(byKeyPath: "title", ascending: true)
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadBook()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
 
 }
 
